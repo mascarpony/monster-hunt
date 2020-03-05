@@ -1,0 +1,24 @@
+<div class="todo__container">
+  <mat-card class="todo__add">
+    <form #f="ngForm" (ngSubmit)="onAddTask(f)" class="todo__add-form">
+      <mat-form-field>
+        <mat-label>Task</mat-label>
+        <input matInput [(ngModel)]="taskModel.task" name="task" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Priority</mat-label>
+        <mat-select [(ngModel)]="taskModel.priority" name="priority">
+          <mat-option *ngFor="let priority of priorities" [value]="priority">{{priority}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-button type="submit" [disabled]="!f.valid">Add one more task</button>
+    </form>
+  </mat-card>
+
+  <div class="todo__list">
+    <mat-card class="todo__task" *ngFor="let task of tasks">
+      <h4>{{task.task}}</h4>
+      <p>Priority: {{task.priority || 'MUST BE DONE YESTERDAY'}}</p>
+    </mat-card>
+  </div>
+</div>

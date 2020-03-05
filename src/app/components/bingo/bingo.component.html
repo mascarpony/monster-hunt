@@ -1,0 +1,12 @@
+<div class="bingo__container">
+  <h2>Welcome to the procrastination bingo!</h2>
+  <div class="bingo">
+    <mat-card *ngFor="let bingoItem of bingo"
+              class="bingo__item"
+              [class.highlighted]="bingoItem.highlighted"
+              (click)="onToggleItem(bingoItem.id)">
+      {{bingoItem.text}}
+    </mat-card>
+  </div>
+  <button mat-button color="primary" class="bingo__reset" (click)="onResetBingo()">Reset</button>
+</div>

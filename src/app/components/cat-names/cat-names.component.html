@@ -1,0 +1,14 @@
+<div class="cat-names__container">
+  <h2>Find the purrfect cat name!</h2>
+  <mat-card class="cat-names__input-container">
+    <mat-form-field>
+      <mat-label>Type something here</mat-label>
+      <input matInput [formControl]="text">
+    </mat-form-field>
+  </mat-card>
+  <div class="cat-names__names-container">
+    <ul class="cat-names__list">
+      <li *ngFor="let name of namesToDisplay" class="cat-names__name">{{name}}</li>
+    </ul>
+  </div>
+</div>

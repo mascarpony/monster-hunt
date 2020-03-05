@@ -1,0 +1,16 @@
+<mat-card *ngIf="monster">
+  <mat-card-title>
+    <p>{{monster.name}}</p>
+  </mat-card-title>
+  <mat-card-content>
+    <div *ngFor="let problem of monster.problems" class="monster__problem">
+      <p><strong>Prerequisites: </strong>{{problem.prerequisites}}</p>
+      <p><strong>Expected behavior: </strong>{{problem.expectedBehavior}}</p>
+      <p><strong>Actual behavior: </strong>{{problem.actualBehavior}}</p>
+      <p *ngIf="problem.limitations"><strong>Limitations: </strong>{{problem.limitations}}</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button [routerLink]="[monster.url]">Navigate to monster</button>
+  </mat-card-actions>
+</mat-card>

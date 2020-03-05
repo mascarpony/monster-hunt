@@ -1,0 +1,11 @@
+<mat-card *ngIf="show">
+  <mat-card-title>
+    <p>{{show.title}}</p>
+  </mat-card-title>
+  <mat-card-content>
+    <p><iframe width="420" height="315" [src]="show.link"></iframe></p>
+    <p><strong>What it is: </strong>{{show.what}}</p>
+    <p><strong>Why you should watch it: </strong>{{show.why}}</p>
+    <p><strong>Commitment: </strong>{{show.commitment}}</p>
+  </mat-card-content>
+</mat-card>

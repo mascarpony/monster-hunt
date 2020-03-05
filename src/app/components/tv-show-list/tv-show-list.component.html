@@ -1,0 +1,13 @@
+<div class="show-list__container">
+  <h2 class="show-list__header">9 TV SHOWS YOU SHOULD BINGE-WATCH THIS MARCH</h2>
+  <nav mat-tab-nav-bar>
+    <a mat-tab-link *ngFor="let link of links"
+       [routerLink]="[link.id]"
+       routerLinkActive="show-list__link--active"
+       #rla="routerLinkActive"
+       [active]="rla.isActive"> {{link.title}} </a>
+  </nav>
+  <div class="show-list__item-container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

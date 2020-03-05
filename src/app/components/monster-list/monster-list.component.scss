@@ -1,0 +1,13 @@
+.monsters {
+  &__cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
