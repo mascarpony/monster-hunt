@@ -5,6 +5,7 @@ export interface MonsterCard {
 }
 
 export interface Problem {
+  number: number;
   prerequisites?: string;
   expectedBehavior: string;
   actualBehavior: string;

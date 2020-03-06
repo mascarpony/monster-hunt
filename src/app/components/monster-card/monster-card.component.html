@@ -4,6 +4,7 @@
   </mat-card-title>
   <mat-card-content>
     <div *ngFor="let problem of monster.problems" class="monster__problem">
+      <h3>Bug #{{problem.number}}</h3>
       <p><strong>Prerequisites: </strong>{{problem.prerequisites}}</p>
       <p><strong>Expected behavior: </strong>{{problem.expectedBehavior}}</p>
       <p><strong>Actual behavior: </strong>{{problem.actualBehavior}}</p>
