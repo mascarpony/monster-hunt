@@ -12,7 +12,7 @@ export class BingoComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.bingo = [...BINGO];
+    this.bingo = this.makeArrayOfObjectsCopy(BINGO);
   }
 
   onToggleItem(id: number) {
@@ -25,6 +25,10 @@ export class BingoComponent implements OnInit {
   }
 
   onResetBingo() {
-    this.bingo = [...BINGO];
+    this.bingo = this.makeArrayOfObjectsCopy(BINGO);
+  }
+
+  makeArrayOfObjectsCopy(arr) {
+    return arr.map(item => ({...item}));
   }
 }
