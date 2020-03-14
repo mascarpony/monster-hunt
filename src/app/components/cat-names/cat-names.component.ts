@@ -18,7 +18,7 @@ export class CatNamesComponent implements OnInit {
     this.text.valueChanges
       .pipe(
         filter(value => value.length > 0),
-        debounceTime(100),
+        debounceTime(500),
         mergeMap(value => this.catNamesService.getCatNames(value))
       )
       .subscribe(names => {
