@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { DomSanitizer } from '@angular/platform-browser';
+
 import { TvShow } from '../../consts/tv-show';
 
 @Component({
@@ -9,10 +11,16 @@ import { TvShow } from '../../consts/tv-show';
 })
 export class TvShowComponent implements OnInit {
   show: TvShow = null;
+  videoURL = null;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
   ngOnInit() {
-    this.show = this.route.snapshot.data.show;
+    this.route.paramMap
+    .subscribe(() => {
+      this.show = this.route.snapshot.data.show;
+      this.videoURL = this.sanitizer.bypassSecurityTrustResourceUrl(this.show.link);
+    });
   }
+
 }
