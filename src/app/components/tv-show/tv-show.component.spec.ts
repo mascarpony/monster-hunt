@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { TvShowComponent } from './tv-show.component';
+import { MAT_MODULES } from '../../app.module';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('TvShowComponent', () => {
   let component: TvShowComponent;
@@ -8,6 +10,7 @@ describe('TvShowComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ MAT_MODULES, RouterTestingModule ],
       declarations: [ TvShowComponent ]
     })
     .compileComponents();

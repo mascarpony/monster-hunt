@@ -6,6 +6,7 @@ import { MonsterCard } from '../../models/monster-card';
   templateUrl: './monster-card.component.html',
   styleUrls: ['./monster-card.component.scss']
 })
+
 export class MonsterCardComponent {
   @Input() monster: MonsterCard;
 }

@@ -21,7 +21,7 @@ import { BingoComponent } from './components/bingo/bingo.component';
 import { TvShowListComponent } from './components/tv-show-list/tv-show-list.component';
 import { TvShowComponent } from './components/tv-show/tv-show.component';
 
-const MAT_MODULES = [
+export const MAT_MODULES = [
   MatCardModule,
   MatButtonModule,
   MatInputModule,
