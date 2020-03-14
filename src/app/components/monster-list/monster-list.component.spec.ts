@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MonsterListComponent } from './monster-list.component';
+import { MAT_MODULES } from '../../app.module';
+import { RouterTestingModule } from '@angular/router/testing';
+import { MonsterCardComponent } from '../monster-card/monster-card.component';
 
 describe('MonsterListComponent', () => {
   let component: MonsterListComponent;
@@ -8,7 +11,8 @@ describe('MonsterListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MonsterListComponent ]
+      imports: [ MAT_MODULES, RouterTestingModule ],
+      declarations: [ MonsterListComponent, MonsterCardComponent ]
     })
     .compileComponents();
   }));
@@ -16,7 +20,6 @@ describe('MonsterListComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MonsterListComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   it('should create', () => {

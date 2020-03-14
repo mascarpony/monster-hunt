@@ -25,6 +25,9 @@ export class BingoComponent implements OnInit {
   }
 
   onResetBingo() {
-    this.bingo = [...BINGO];
+    this.bingo = this.bingo.map(item => {
+      item.highlighted = false;
+      return item;
+    });
   }
 }
