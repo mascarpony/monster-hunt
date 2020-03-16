@@ -11,8 +11,12 @@ export class BingoComponent implements OnInit {
 
   constructor() { }
 
+  arreyOfCards(arrey) {
+    return arrey.map(item => ({...item}))
+  }
+
   ngOnInit() {
-    this.bingo = [...BINGO];
+    this.bingo = this.arreyOfCards(BINGO);
   }
 
   onToggleItem(id: number) {
@@ -25,6 +29,6 @@ export class BingoComponent implements OnInit {
   }
 
   onResetBingo() {
-    this.bingo = [...BINGO];
+    this.bingo = this.arreyOfCards(BINGO);
   }
 }

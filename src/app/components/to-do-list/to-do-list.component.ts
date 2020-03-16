@@ -16,6 +16,6 @@ export class ToDoListComponent {
 
   onAddTask(form) {
     this.tasks.push({ task: this.taskModel.task, priority: this.taskModel.priority});
-    form.reset();
+    form.resetForm();
   }
 }
