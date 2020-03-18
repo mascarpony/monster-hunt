@@ -13,6 +13,9 @@ export class TvShowComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.show = this.route.snapshot.data.show;
+    this.route.paramMap.subscribe(() => {
+      this.show = this.route.snapshot.data.show;
+    })
+    // paramMap is BehaviorSubject => we can subscribe to it to get a snapshot when the route updates
   }
 }
