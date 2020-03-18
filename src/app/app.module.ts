@@ -20,6 +20,7 @@ import { CatNamesComponent } from './components/cat-names/cat-names.component';
 import { BingoComponent } from './components/bingo/bingo.component';
 import { TvShowListComponent } from './components/tv-show-list/tv-show-list.component';
 import { TvShowComponent } from './components/tv-show/tv-show.component';
+import { SafePipe } from './safe.pipe';
 
 const MAT_MODULES = [
   MatCardModule,
@@ -41,6 +42,7 @@ const MAT_MODULES = [
     BingoComponent,
     TvShowListComponent,
     TvShowComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
