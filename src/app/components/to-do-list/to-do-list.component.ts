@@ -16,6 +16,9 @@ export class ToDoListComponent {
 
   onAddTask(form) {
     this.tasks.push({ task: this.taskModel.task, priority: this.taskModel.priority});
-    form.reset();
+    form.resetForm(); 
+    //The difference between resetForm and reset is that the former will clear the form fields 
+    // as well as any validation, while the later will only clear fields. 
+    // Use resetForm after the form is validated and submitted, otherwise use reset
   }
 }

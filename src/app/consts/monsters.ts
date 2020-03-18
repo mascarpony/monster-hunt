@@ -38,7 +38,7 @@ export const MONSTERS: MonsterCard[] = [
     }]
   }, {
     name: 'TV Shows',
-    url: 'tv-show',
+    url: '/tv-show', // use an absolute path
     problems: [{
       number: 5,
       prerequisites: 'Open Any TV Show. Navigate to the another one',

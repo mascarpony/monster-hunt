@@ -25,6 +25,7 @@ export class BingoComponent implements OnInit {
   }
 
   onResetBingo() {
-    this.bingo = [...BINGO];
+    this.bingo.map(item => item.highlighted = false); 
+    // copying the arrow doesn't mean copying the objects inside it (the objects are linked)
   }
 }

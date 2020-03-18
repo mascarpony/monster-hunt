@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CatNamesService } from '../../services/cat-names.service';
 import { FormControl } from '@angular/forms';
-import { debounceTime, filter, mergeMap } from 'rxjs/operators';
+import { debounceTime, switchMap } from 'rxjs/operators';
+import { of } from 'rxjs';
 
 @Component({
   selector: 'app-cat-names',
@@ -17,9 +18,10 @@ export class CatNamesComponent implements OnInit {
   ngOnInit() {
     this.text.valueChanges
       .pipe(
-        filter(value => value.length > 0),
         debounceTime(100),
-        mergeMap(value => this.catNamesService.getCatNames(value))
+        switchMap(value => value ? this.catNamesService.getCatNames(value) : of([]))
+        // of - for creating a new observable if there's no value
+        // switchMap uses only the latest data, while mergeMap uses all data passed 
       )
       .subscribe(names => {
         this.namesToDisplay = names;
